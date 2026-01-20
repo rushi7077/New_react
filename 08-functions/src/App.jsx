@@ -1,34 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+function onChanging(val){
+  console.log(val);
+  
+}
+const onClicking= ()=> {
+  console.log("clicking");
+  
+};
+
+
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className='flex align-center justify-center flex-col'>
+      <input className='m-2 p-5 h-screen text-center bg-amber-200' onChange={(ele)=>{
+        onChanging(ele.target.value)
+      }} type="text" placeholder='Enter the name' />
+      <button onClick={onClicking}>click</button>
+      <div className="page1"></div>
+      <div className="page2"></div>
+      <div className="page3"></div>
+    </div>
+    
   )
 }
 
