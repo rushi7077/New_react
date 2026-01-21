@@ -1,34 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const formHandler = (e)=>{
+    e.preventDefault();
+    console.log("Form is submitted.");
+    
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className='bg-fuchsia-500 flex flex-row items-center justify-center gap-3 h-screen w-full'>
+      <div >
+      <form className='flex flex-col gap-3' onSubmit={(e)=>{
+        formHandler(e);
+      }}>
+        <input className='p-6 bg-amber-300 outline-none' type="text"  placeholder='Enter your name '/>
+        <button className='bg-blue-400 p-5'>Submit</button>
+      </form>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
