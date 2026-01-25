@@ -24,7 +24,7 @@ let printUserData = <h2 className='text-white text-xl absolute top-1/2 left-1/2
 if(userData.length>0){
   printUserData = userData.map((elm,idx)=>{
     return <a href={elm.url}>
-      <div key={idx} className='h-60 w-54 bg-amber-400 text-black '>
+      <div key={idx} className='h-60 w-54 bg-white text-black '>
       <div className='h-50 w-54'>
         <img className='h-full w-full object-cover' src={elm.download_url} alt="" />
     </div>
@@ -46,10 +46,10 @@ if(userData.length>0){
       </div>*/}
       {/*<h1 className='bg-amber-400 text-black font-bold text-2xl w-10 h-10 rounded-full flex items-center justify-center'>{index}</h1>*/}
       <div>
-          <div className='w-full h-[85%] flex flex-wrap justify-center gap-10 p-10'>{printUserData}</div>
+          <div className='w-full flex flex-wrap justify-center gap-10 p-10'>{printUserData}</div>
       </div>
       <div className='flex justify-center gap-10 py-10 mb-10 '>
-        <button className='bg-amber-400 cursor-pointer rounded active:scale-95 active:bg-white  text-lg font-bold px-5 py-2' 
+        <button style={{opacity: index == 1 ? 0.5:1}} className='bg-white text-black cursor-pointer rounded active:scale-95 active:bg-amber-300  text-lg font-bold px-5 py-2' 
         onClick={()=>{
           if(index>1){
             setIndex(index-1)
@@ -58,7 +58,7 @@ if(userData.length>0){
           prev
         </button>
         <button className='bg-black rounded text-lg font-bold px-5 py-2 text-white' >Page {index}</button>
-        <button className='bg-amber-400 cursor-pointer rounded active:scale-95 active:bg-white text-lg font-bold px-5 py-2' 
+        <button className='bg-white text-black cursor-pointer rounded active:scale-95 active:bg-amber-300 text-lg font-bold px-5 py-2' 
         onClick={()=>{
           setIndex(index+1)
         }}>
