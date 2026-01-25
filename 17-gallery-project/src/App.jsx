@@ -45,28 +45,26 @@ if(userData.length>0){
       </button>
       </div>*/}
       {/*<h1 className='bg-amber-400 text-black font-bold text-2xl w-10 h-10 rounded-full flex items-center justify-center'>{index}</h1>*/}
-            <div className='flex justify-center gap-10 py-10'>
+      <div>
+          <div className='w-full h-[85%] flex flex-wrap justify-center gap-10 p-10'>{printUserData}</div>
+      </div>
+      <div className='flex justify-center gap-10 py-10 mb-10 '>
         <button className='bg-amber-400 cursor-pointer rounded active:scale-95 active:bg-white  text-lg font-bold px-5 py-2' 
         onClick={()=>{
           if(index>1){
-            setUserData([])
             setIndex(index-1)
           }
         }}>
           prev
         </button>
+        <button className='bg-black rounded text-lg font-bold px-5 py-2 text-white' >Page {index}</button>
         <button className='bg-amber-400 cursor-pointer rounded active:scale-95 active:bg-white text-lg font-bold px-5 py-2' 
         onClick={()=>{
-          setUserData([])
           setIndex(index+1)
         }}>
           next
         </button>
       </div>
-      <div>
-          <h2 className='w-full flex flex-wrap justify-center gap-10 p-1'>{printUserData}</h2>
-      </div>
-
     </div>
   )
 }
