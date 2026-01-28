@@ -1,15 +1,17 @@
-import React from 'react'
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, Outlet } from "react-router-dom";
 
 function Product() {
   return (
-    <div>
-        <div className='text-5xl font-bold absolute top-90 left-150 flex gap-20'>
-            <Link to="/product/men">Men</Link>
-            <Link to="/product/women">Women</Link>
-        </div>
+    <div className="p-10 ml-10 mt-20">
+      <div className="text-3xl font-bold flex gap-20 mb-10">
+        <Link to="men">Men</Link>
+        <Link to="women">Women</Link>
+      </div>
+
+      <Outlet />
     </div>
-  )
+  );
 }
 
-export default Product
+export default Product;
