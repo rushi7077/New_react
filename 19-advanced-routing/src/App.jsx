@@ -6,16 +6,22 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import {Route, Routes} from 'react-router-dom'
 import PageNotFound from './pages/PageNotFound'
+import Product from './pages/Product'
+import Men from './pages/Men'
+import Women from './pages/Women'
 
 function App() {
   return (
-    <div className='min-h-screen bg-cyan-600 overflow-auto'>
+    <div className='min-h-screen bg-radial from-amber-400 to-cyan-600 overflow-auto'>
       <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='*' element={<PageNotFound/>}/>
+        <Route path='product' element={<Product/>}/>
+        <Route path='product/men' element={<Men/>}/>
+        <Route path='product/women' element={<Women/>}/>
       </Routes>
       <Footer/>
     </div>
