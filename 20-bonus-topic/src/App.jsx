@@ -6,8 +6,7 @@ function App() {
   const [theme, setTheme] = useState('Light')
 
   return (
-    <div>
-      <h1> Theme is {theme}</h1>
+    <div className={`min-h-screen flex justify-center items-center ${theme === 'Light' ? "bg-white text-black" : "bg-black text-white"}`}>
       <Navbar theme={theme} setTheme={setTheme}/>
     </div>
   )
