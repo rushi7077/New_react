@@ -7,7 +7,6 @@ import {TextC} from '../contexts/TextColorContext'
 function Navbar() {
 
   const [theme] = useContext(ThemeDataContext)
-  const [color] = useContext(TextC)
 
   return (
     <div className='h-screen'>
